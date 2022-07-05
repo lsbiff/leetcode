@@ -1,3 +1,4 @@
+# Length of Last Word fancy edition
 # remove spaces from the end (if exists)
 # reverse the string
 # split by spaces
@@ -6,6 +7,7 @@
 
 def lengthOfLastWord(s: str) -> int:
     return s.rstrip()[::-1].split(' ')[0].__len__()
+    #return len(s.split()[-1]) works waaaaaaay better lmao
 
 
 sentences = ["Hello World", "   fly me   to   the moon  ", "luffy is still joyboy"]
