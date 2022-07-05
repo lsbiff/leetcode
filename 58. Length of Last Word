@@ -1,0 +1,14 @@
+# remove spaces from the end (if exists)
+# reverse the string
+# split by spaces
+# get the first position lenght
+
+
+def lengthOfLastWord(s: str) -> int:
+    return s.rstrip()[::-1].split(' ')[0].__len__()
+
+
+sentences = ["Hello World", "   fly me   to   the moon  ", "luffy is still joyboy"]
+
+for sentence in sentences:
+    print(lengthOfLastWord(sentence))
