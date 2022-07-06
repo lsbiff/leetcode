@@ -1,4 +1,7 @@
 #Definition for singly-linked list.
+from logging.config import valid_ident
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -14,6 +17,11 @@ class Solution:
 
         finalList = ListNode()
         header = finalList
+
+        if list1 == None:
+            return list2
+        if list2 == None:
+            return list1
 
         while list1 != None and list2 != None:
 
@@ -55,7 +63,7 @@ class Solution:
 mySolution = Solution()
 
 l1 = ListNode(1)
-l1.next = ListNode(2)
+#l1.next = ListNode(2)
 #l1.next.next = ListNode(4)
 
 l2 = None
