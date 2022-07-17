@@ -33,12 +33,15 @@ class Solution:
             if side < side1 or side < side2 or side < side3  or side < side4:
                 return False 
 
-            # this make a huge difference when using caches. Need some investigation. 
+            # this part below makes a huge difference when using caches. 
+            # I think it's because finding the matchsticks for side1 makes the problem goes just for the sides 2,3 and 4. 
+            # If matchsticks for side2 was found (after side1), program just check for 3 and 4 instead checking for every side.
+            # Just my opinion and I must investigate this further
             sortingSides = [side1, side2, side3, side4] 
             sortingSides.sort()
             side1, side2, side3, side4 = sortingSides
 
-            #backtracking. we add the index to every side
+            #backtracking. we add the new matchstick lenght to every side and the next matchstick index
             return dfs(self, side1 + matchsticks[index], side2, side3, side4, index + 1) or dfs(self, side1, side2 + matchsticks[index], side3, side4, index + 1) or dfs(self, side1, side2, side3 + matchsticks[index], side4, index + 1) or dfs(self, side1, side2, side3, side4 + matchsticks[index], index + 1)
               
         return dfs(self, 0, 0, 0, 0 ,0)
