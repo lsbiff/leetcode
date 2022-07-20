@@ -2,9 +2,7 @@ class Solution:
     def sumZero(self, n: int) -> List[int]:
         edges = n // 2
         l = []
-        
-        
-        
+          
         for i in range(-1*(edges), 0):
             l.append(i)
             
